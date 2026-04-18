@@ -33,5 +33,12 @@ def check_market():
     except Exception as e:
         print(f"エラーが発生しました: {e}")
 
+＃if __name__ == "__main__":
+    ＃check_market()
+
 if __name__ == "__main__":
+    # テスト用：強制的にメッセージを送る
+    data = {"content": "✅ GitHubからのテスト通知です！正常に連携されています。"}
+    requests.post(DISCORD_URL, json=data)
+    # 本来のチェックも動かす
     check_market()
