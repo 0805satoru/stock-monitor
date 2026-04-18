@@ -25,3 +25,9 @@ jobs:
           # 警告にあった最新の環境設定を念のため追加
           FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         run: python stock.py
+
+if __name__ == "__main__":
+    # ★テスト用にこの1行を追加して保存（Commit）する
+    send_discord("🧪 SQ通知チャンネルのテスト送信です！")
+    
+    check_sq()
