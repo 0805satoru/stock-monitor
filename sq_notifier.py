@@ -39,9 +39,3 @@ def send_discord(message):
 
 if __name__ == "__main__":
     check_sq()
-
-if __name__ == "__main__":
-    # ★テスト用にこの1行を追加して保存（Commit）する
-    send_discord("🧪 SQ通知チャンネルのテスト送信です！")
-    
-    check_sq()
