@@ -1,0 +1,20 @@
+name: SQ Reminder
+
+on:
+  schedule:
+    - cron: '30 23 * * *' # 日本時間 朝8:30
+  workflow_dispatch:
+
+jobs:
+  sq_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: pip install requests jpholiday
+      - name: SQチェックを実行
+        env:
+          SQ_WEBHOOK_URL: ${{ secrets.SQ_WEBHOOK_URL }}
+        run: python sq_notifier.py
